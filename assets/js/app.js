@@ -7,7 +7,7 @@ window.onload = (event) => {
     video.controls = false;
     playPause.innerHTML = '<i class="fa fa-play-circle"></i>';
     mute.innerHTML = '<div class="eq"><div class="eq-line"></div><div class="eq-line"></div><div class="eq-line"></div><div class="eq-line"></div><div class="eq-line"></div><div class="eq-line"></div></div>';
-
+    currentTime.innerHTML = '00:00';
     // add lsiteners to controllers
     video.addEventListener('timeupdate', (e)=>{
         currentTime.innerHTML = video.currentTime.toMMSS();
