@@ -4,12 +4,18 @@ window.onload = (event) => {
     const playPause = document.getElementById('play-pause-button');
     const currentTime = document.getElementById('current-time');
     const mute = document.getElementById('mute-button');
+
+    // disable default controls because we have better
     video.controls = false;
+
+    // add default contents
     playPause.innerHTML = '<i class="fa fa-play-circle"></i>';
     mute.innerHTML = '<div class="eq"><div class="eq-line"></div><div class="eq-line"></div><div class="eq-line"></div><div class="eq-line"></div><div class="eq-line"></div><div class="eq-line"></div></div>';
     currentTime.innerHTML = '00:00';
-    // add lsiteners to controllers
+
+    // add listeners to controllers
     video.addEventListener('timeupdate', (e)=>{
+        // if there is playback, update the timestamp and animate the equalizer (it's sad, but we have only fake eq)
         currentTime.innerHTML = video.currentTime.toMMSS();
         eqAnim();
     });
@@ -30,7 +36,7 @@ window.onload = (event) => {
 
 };
 
-// create a prototype to convert video timestamp into mm:ss format
+// update a prototype to convert video timestamp into mm:ss format
 Number.prototype.toMMSS = function(){
     const timestamp = this;
     let hh = Math.floor(timestamp / 3600);
