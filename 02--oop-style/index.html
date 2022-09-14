@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HTML5 videoplayer style</title>
+        <meta name="description" content="LEt's overwrite the default videoplayer style">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/app.css">
+        <script src="assets/js/app.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="video-player">
+                <video id="video" preload="metadata">
+                    <source src="https://tractive.com/assets/static/videos/ActivityMonitoring_15s_EN.mp4" type="video/mp4">
+                </video>
+                <ul class="player-controls">
+                    <li id="play-pause-button"></li>
+                    <li><div id="current-time"></div><div id="mute-button"></div></li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            const videoPlayer = new vPlayer();
+            videoPlayer.init();
+        </script>
+    </body>
+</html>
